@@ -1,0 +1,215 @@
+<div class="wrapper">
+
+  <mat-card class="container">
+
+    <mat-card-header class="header-form">
+      <mat-card-title>{{ title }}</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content class="form">
+
+    <!--FORMULÁRIO-->
+      <form 
+      action="#" 
+      id="form-container">
+  
+        <div class="form">
+
+          <!--NOME-->
+          <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input 
+            matInput 
+            type="text" 
+            placeholder="Digite seu nome.." 
+            required
+            minlength="3">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['name'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['name'].getError('minlength')">
+                Quantidade errada de caracteres - (mínimo 3)
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+           <!--SOBRENOME-->  
+          <mat-form-field appearance="fill">
+            <mat-label>Sobrenome</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite seu sobrenome.." 
+            required 
+            minlength="3">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['lastName'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['lastName'].getError('minlength')">
+                Quantidade errada de caracteres - (mínimo 4)
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <!--USUÁRIO-->
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite seu Username.." 
+            required 
+            minlength="4">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['username'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <!--CPF-->
+          <mat-form-field appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite seu CPF..." 
+            required 
+            minlength="11">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['cpf'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['cpf'].getError('minlength')">
+                Quantidade errada de caracteres - (mínimo 11)
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <!--TELEFONE-->
+          <mat-form-field appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input 
+            type="tel" 
+            matInput
+            placeholder="Digite o seu telefone.." 
+            required 
+            minlength="11">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['telefone'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+          </mat-form-field>
+  
+          <!--ENDEREÇO-->
+          <mat-form-field appearance="fill">
+            <mat-label>Endereço</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite o seu endereço.." 
+            required 
+            minlength="5">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['endereco'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <!--COMPLEMENTO-->
+          <mat-form-field appearance="fill">
+            <mat-label>Complemento</mat-label>
+            <input
+            type="text" 
+            matInput 
+            placeholder="Digite o complemento (apt, andar, ponto de referência e etc) .."
+            required 
+            minlength="5">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['complemento'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <!--SENHA-->
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input 
+            type="password"
+            matInput 
+            placeholder="Digite a sua senha..."
+            required
+            minlenght="6">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['senha'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['senha'].getError('minlength')">
+                Quantidade errada de caracteres - (mínimo 11)
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <!--CONFIRMAÇÃO DA SENHA-->
+          <mat-form-field appearance="outline">
+            <mat-label>Confirme a sua Senha</mat-label>
+            <input 
+            type="password"
+            matInput 
+            placeholder="Confirmar a senha..."
+            required
+            minlength="6">
+  
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['confirmaSenha'].getError('required')">
+                Campo Obrigatório!
+              </span>
+            </mat-error>
+
+            <mat-error>
+              <span *ngIf="cadastrosData.controls['confirmaSenha'].getError('minlength')">
+                Quantidade errada de caracteres - (mínimo 6)
+              </span>
+            </mat-error>
+          </mat-form-field>
+  
+        </div>
+        <!--BOTÃO PARA O ENVIO-->
+        <div>
+          <button class="form"
+          mat-raised-button
+          type="submit"
+          color="primary"><p>Enviar</p></button>
+        </div>
+  
+      </form>
+    </mat-card-content>
+  
+  </mat-card>
+
+</div>
