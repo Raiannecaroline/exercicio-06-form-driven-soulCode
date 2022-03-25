@@ -4,7 +4,7 @@
 ## O que foi aprendido: 🚀
 - Usar o Angular Material
 - Fazer a caixa de Dialogo (Dialog)
-- Validar senhas
+- Comparar senhas
 - Trabalhar com FormCrontrol
 - Trabalhar com diversos componentes
 
