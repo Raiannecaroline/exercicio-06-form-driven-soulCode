@@ -92,6 +92,26 @@
             </mat-error>
           </mat-form-field>
 
+          <!--EMAIL-->
+          <mat-form-field appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input type="email"
+            matInput
+            name="email"
+            autocomplete="off"
+            placeholder="email@exemplo.com"
+            [(ngModel)]="email"
+            #emailInput="ngModel"
+            required
+            minlength="5">
+
+            <mat-error>
+              <span *ngIf="emailInput.errors?.['minlength']">
+                Quantidade errada de caracteres (mínimo 5).
+              </span>
+            </mat-error>
+          </mat-form-field>
+
           <!--CPF-->
           <mat-form-field appearance="fill">
             <mat-label>CPF</mat-label>

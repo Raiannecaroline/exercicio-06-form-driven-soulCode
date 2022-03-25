@@ -11,6 +11,7 @@ export class DialogDrivenComponent implements OnInit {
   nameDialog: string = ''
   lastnameDialog: string = ''
   usernameDialog: string = ''
+  emailDialog: string = ''
   cpfDialog: string = ''
   telDialog: string = ''
   enderecoDialog: string = ''
