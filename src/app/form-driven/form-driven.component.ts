@@ -1,12 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import {MatDialog } from '@angular/material/dialog';
+import { DialogDrivenComponent } from '../dialog-driven/dialog-driven.component';
 
 @Component({
   selector: 'app-form-driven',
   templateUrl: './form-driven.component.html',
   styleUrls: ['./form-driven.component.css']
 })
-export class FormDrivenComponent{
+export class FormDrivenComponent {
 
   @Input()
   title: string = 'Cadastre-se!'
@@ -15,22 +16,47 @@ export class FormDrivenComponent{
   lastName: string = ''
   user: string = ''
   cpf: string = ''
-  telefone: number = 0
+  tel: string = ''
   endereco: string = ''
   complemento: string = ''
-  senha: string = ''
-  confirmaSenha: string = ''
+  senha: any = ''
+  confirmaSenha: any = ''
 
-  cadastrosData: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    lastName: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    username: new FormControl('', [Validators.required]),
-    cpf: new FormControl('', [Validators.required, Validators.minLength(11)]),
-    telefone: new FormControl('', [Validators.required]),
-    endereco: new FormControl('', [Validators.required]),
-    complemento: new FormControl('', [Validators.required]),
-    senha: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    confirmaSenha: new FormControl('', [Validators.required, Validators.minLength(6)])
-  })
+  constructor(
+    private dialog: MatDialog
+  ){}
+
+  buttonEnviar(): void {
+    
+    console.log(`Name = ${this.name}`)
+    console.log(`Last Name = ${this.lastName}`)
+    console.log(`User ${this.user}`)
+    console.log(`CPF = ${this.cpf}`)
+    console.log(`Telefone = ${this.tel}`)
+    console.log(`Endereço = ${this.endereco}`)
+    console.log(`Complemento = ${this.complemento}`)
+    console.log(`Senha = ${this.senha}`)
+    console.log(`Confirma Senha = ${this.confirmaSenha}`)
+
+    let refDialog = this.dialog.open(DialogDrivenComponent)
+
+    refDialog.componentInstance.nameDialog = this.name
+    refDialog.componentInstance.lastnameDialog = this.lastName
+    refDialog.componentInstance.usernameDialog = this.user
+    refDialog.componentInstance.cpfDialog = this.cpf
+    refDialog.componentInstance.telDialog = this.tel
+    refDialog.componentInstance.enderecoDialog = this.endereco
+
+    
+  }
+
+  
+  validarButtonsSenhas(): void {
+    if(this.senha === this.confirmaSenha){
+      alert('Senhas são compatíveis!!')
+    } else {
+      alert('As senhas são divergentes!! Por favor, coloque os campos (senha) iguais')
+    }
+  }
 
 }
